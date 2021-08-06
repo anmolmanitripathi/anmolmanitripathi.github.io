@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Resize Image</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=92c93168e2dfe05310c5debedb5b67b0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=ebd6f95904009a297a139802d395213f">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="#">INTERNSHIP ASSIGNMENT</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#Home">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section id="Home" class="clean-block clean-hero" style="background-image:url(&quot;/assets/img/tech/image4.jpg?h=0adc0de9a17a7caea6b8641f5d6ae02c&quot;);color:rgba(9, 162, 255, 0.85);">
+            <div class="text">
+                <h2>Resize Your Images</h2>
+                <p>This website will help you resize your images with just one click of a button.</p><a class="btn btn-outline-light btn-lg" role="button" href="#Upload-Image">Start Resizing</a></div>
+        </section>
+        <section id="Upload-Image" class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Upload Your Image</h2>
+                    <p>Upload your image which requires resizing.</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6"><img class="img-thumbnail" id="View-Image" src="/assets/img/scenery/image5.jpg?h=5a16d46fccd884924ce66752802d76c5"></div>
+                    <div class="col-md-6">
+                        <h5>Click the Button to Select your Image</h5>
+                        <div class="getting-started-info"></div><input class="btn btn-outline-primary btn-lg" id="Upload-Button" type="file" accept="image/*" ></div>
+                </div>
+            </div>
+        </section>
+        <section id="Enter-Details" class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Input the height &amp; weight of the image.</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><i class="icon-star icon"></i>
+                        <h4>Enter Height</h4><input type="number" id="Get-Height" style="width: 90%;" name="height" min="10" max="1080">
+                        <p id='Height-Info'></p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
+                        <h4>Enter Width</h4><input type="number" id="Get-Width" style="width: 90%;" name="weight" min="10" max="1080">
+                        <p id='Width-Info'></p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><button class="btn btn-outline-primary btn-lg" id="Resize-Button" type="button">Resize Image</button></div>
+                </div>
+            </div>
+        </section>
+        <section id="View-Resize-Image" class="clean-block slider dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Resized Image</h2>
+                    <p>You can view your resized image here.</p>
+                    <p></p>
+                    <canvas id="Canvas-Output"></canvas>
+                    <p></p>
+                    <a class="btn btn-outline-primary btn-lg" id="Download-Button" type="button" download="image.png">Download Image</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Start: Footer Dark -->
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© 2021 Intership Assignment</p>
+        </div>
+    </footer>
+    <!-- End: Footer Dark -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="/assets/js/script.min.js?h=037c4117326bceadaedc2681de8afadc"></script>
+    <script src="/javascripts/change_image.js"></script>
+    <script src="/javascripts/get_values.js"></script>
+    <script src="/javascripts/download_image.js"></script>
+    <script>
+        function onOpenCvReady() {
+          console.log( 'OpenCV Ready', cv);
+        }
+      </script>
+    <script async src="/javascripts/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+</body>
+
+</html>
